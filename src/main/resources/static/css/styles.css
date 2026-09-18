@@ -1,0 +1,675 @@
+/* ============================================================
+   CineFlix - Estilos (tema escuro estilo Netflix)
+   ============================================================ */
+
+:root {
+    --bg: #141414;
+    --bg-elev: #1f1f1f;
+    --red: #e50914;
+    --red-hover: #f6121d;
+    --text: #ffffff;
+    --text-dim: #b3b3b3;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--red);
+}
+
+.logo span {
+    color: var(--text);
+}
+
+/* ============================================================
+   Autenticacao
+   ============================================================ */
+.auth-body {
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.85)),
+        url('https://picsum.photos/seed/cineflixbg/1600/900') center/cover no-repeat fixed;
+}
+
+.auth-header {
+    padding: 20px 50px;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 80px;
+}
+
+.auth-card {
+    background: rgba(0, 0, 0, 0.78);
+    padding: 48px 56px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-card h1 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.auth-form input {
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 16px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.auth-form input::placeholder {
+    color: #8c8c8c;
+}
+
+.auth-form input:focus {
+    outline: 2px solid #555;
+}
+
+.btn-primary {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.btn-primary:hover {
+    background: var(--red-hover);
+}
+
+.auth-switch {
+    margin-top: 24px;
+    color: var(--text-dim);
+}
+
+.auth-switch a {
+    color: #fff;
+    margin-left: 6px;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+.auth-hint {
+    margin-top: 18px;
+    font-size: .82rem;
+    color: #8c8c8c;
+}
+
+.alert {
+    background: #e87c03;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: .9rem;
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent);
+    transition: background .3s;
+}
+
+.navbar.scrolled {
+    background: var(--bg);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--text-dim);
+    font-size: .95rem;
+    transition: color .2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box input {
+    background: rgba(0,0,0,.65);
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #fff;
+    width: 200px;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+.nav-rentals {
+    color: #fff;
+    font-size: .95rem;
+}
+
+.nav-rentals:hover {
+    color: var(--text-dim);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-name {
+    font-size: .9rem;
+    color: var(--text-dim);
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid #777;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .85rem;
+}
+
+.btn-logout:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+/* ============================================================
+   Hero / Banner
+   ============================================================ */
+.hero {
+    position: relative;
+    height: 78vh;
+    min-height: 520px;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 620px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,.7);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: #e5e5e5;
+    text-shadow: 1px 1px 4px rgba(0,0,0,.7);
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.btn-play,
+.btn-info {
+    border: none;
+    border-radius: 4px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-play {
+    background: #fff;
+    color: #000;
+}
+
+.btn-play:hover {
+    background: rgba(255,255,255,.8);
+}
+
+.btn-info {
+    background: rgba(109,109,110,.7);
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: rgba(109,109,110,.5);
+}
+
+.hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--bg), transparent);
+}
+
+/* ============================================================
+   Trilhos (rows) e cards
+   ============================================================ */
+.rows {
+    margin-top: -80px;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 60px;
+}
+
+.row {
+    margin: 30px 0;
+    padding: 0 50px;
+}
+
+.row-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.row-cards {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+}
+
+.row-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.row-cards::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--bg-elev);
+    transition: transform .25s, box-shadow .25s;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    padding: 10px;
+}
+
+.card-info h3 {
+    font-size: .95rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-price {
+    color: var(--red);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.card-owned {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--red);
+    color: #fff;
+    font-size: .7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Grid (busca / genero) */
+.grid .row-cards {
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+/* ============================================================
+   Modal
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.modal {
+    background: var(--bg-elev);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 780px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 20;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: var(--red);
+}
+
+.modal-backdrop {
+    width: 100%;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    position: relative;
+}
+
+.modal-video {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.modal-body {
+    padding: 24px 32px 32px;
+}
+
+.modal-body h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    font-size: .95rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    border: 1px solid #777;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: .8rem;
+}
+
+.modal-body p {
+    line-height: 1.6;
+    color: #d2d2d2;
+    margin-bottom: 20px;
+}
+
+.modal-rental {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--red);
+}
+
+.rental-info {
+    color: var(--text-dim);
+    font-size: .9rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.modal-status {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: #2a2a2a;
+}
+
+.modal-status.success {
+    background: #1a5e2a;
+}
+
+.modal-status.error {
+    background: #7a1a1a;
+}
+
+/* ============================================================
+   Pagina Meus Alugueis
+   ============================================================ */
+.rentals-page {
+    padding: 110px 50px 60px;
+    min-height: 100vh;
+}
+
+.rentals-page h1 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+}
+
+.rentals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.rentals-empty {
+    text-align: center;
+    color: var(--text-dim);
+    margin-top: 60px;
+}
+
+.rentals-empty p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.rentals-empty .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    max-width: 200px;
+}
+
+.rental-card {
+    background: var(--bg-elev);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rental-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.rental-card-info {
+    padding: 12px;
+}
+
+.rental-card-info h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.rental-expiry {
+    font-size: .82rem;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.rental-expiry.expired {
+    color: var(--red);
+}
+
+.btn-watch {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-watch:disabled {
+    background: #555;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.btn-watch:not(:disabled):hover {
+    background: rgba(255,255,255,.8);
+}
+
+.status-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.status-badge.active {
+    background: #1a5e2a;
+}
+
+.status-badge.expired {
+    background: #7a1a1a;
+}
+
+/* ============================================================
+   Responsivo
+   ============================================================ */
+@media (max-width: 768px) {
+    .navbar { padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+    .nav-links { display: none; }
+    .search-box input { width: 130px; }
+    .hero { padding: 0 20px; }
+    .hero-content h1 { font-size: 2rem; }
+    .row { padding: 0 20px; }
+    .rentals-page { padding: 100px 20px 40px; }
+    .auth-card { padding: 32px 24px; }
+    .modal-backdrop { height: 240px; }
+}

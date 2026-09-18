@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - Entrar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auth-body">
+    <header class="auth-header">
+        <a href="login.html" class="logo">CINE<span>FLIX</span></a>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1 id="form-title">Entrar</h1>
+
+            <div id="alert" class="alert hidden"></div>
+
+            <!-- Formulario de LOGIN -->
+            <form id="login-form" class="auth-form">
+                <input type="email" id="login-email" placeholder="E-mail" required>
+                <input type="password" id="login-password" placeholder="Senha" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+
+            <!-- Formulario de CADASTRO (oculto por padrao) -->
+            <form id="register-form" class="auth-form hidden">
+                <input type="text" id="reg-name" placeholder="Nome completo" required>
+                <input type="email" id="reg-email" placeholder="E-mail" required>
+                <input type="password" id="reg-password" placeholder="Senha (min. 6 caracteres)" required>
+                <button type="submit" class="btn-primary">Criar conta</button>
+            </form>
+
+            <p class="auth-switch">
+                <span id="switch-text">Novo por aqui?</span>
+                <a href="#" id="switch-link">Crie uma conta agora.</a>
+            </p>
+
+            <p class="auth-hint">
+                Conta de demonstracao: <strong>demo@cineflix.com</strong> / senha <strong>123456</strong>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - Meus Alugueis</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">CINE<span>FLIX</span></a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" class="nav-rentals">Catalogo</a>
+            <div class="profile">
+                <span id="user-name">Usuario</span>
+                <button id="logout-btn" class="btn-logout">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="rentals-page">
+        <h1>Meus Alugueis</h1>
+        <div id="rentals-empty" class="rentals-empty hidden">
+            <p>Voce ainda nao alugou nenhum filme.</p>
+            <a href="index.html" class="btn-primary">Ver catalogo</a>
+        </div>
+        <div class="rentals-grid" id="rentals-grid"></div>
+    </main>
+
+    <!-- Player -->
+    <div class="modal-overlay hidden" id="player-modal">
+        <div class="modal">
+            <button class="modal-close" id="player-close">&times;</button>
+            <div class="modal-backdrop">
+                <video id="player-video" class="modal-video" controls autoplay></video>
+            </div>
+            <div class="modal-body">
+                <h2 id="player-title"></h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/rentals.js"></script>
+</body>
+</html>

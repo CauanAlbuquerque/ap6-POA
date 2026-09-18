@@ -1,0 +1,24 @@
+-- ============================================================
+--  CineFlix - Dados iniciais
+-- ============================================================
+-- MERGE evita duplicar dados quando o app reinicia (H2 file mode).
+
+-- ---- Usuario de demonstracao (senha: 123456) ----
+MERGE INTO users (id, name, email, password) KEY(id) VALUES
+ (1, 'Usuario Demo', 'demo@cineflix.com', '123456');
+
+-- ---- Catalogo de filmes ----
+-- As URLs de video usam clips livres de exemplo (Google sample videos).
+MERGE INTO movies (id, title, description, genre, release_year, duration_min, rating, poster_url, backdrop_url, video_url, rental_price, rental_days, featured) KEY(id) VALUES
+ (1, 'A Grande Fuga', 'Um grupo de prisioneiros planeja a fuga mais ousada da historia em meio a Segunda Guerra.', 'Acao', 2021, 128, '14', 'https://picsum.photos/seed/cineflix1/300/450', 'https://picsum.photos/seed/cineflix1b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 9.90, 2, TRUE),
+ (2, 'Cidade das Estrelas', 'Um musico e uma atriz se apaixonam enquanto perseguem seus sonhos em Los Angeles.', 'Romance', 2019, 115, '12', 'https://picsum.photos/seed/cineflix2/300/450', 'https://picsum.photos/seed/cineflix2b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 7.90, 2, FALSE),
+ (3, 'O Ultimo Planeta', 'A humanidade busca um novo lar entre as estrelas apos a Terra se tornar inabitavel.', 'Ficcao Cientifica', 2022, 142, '12', 'https://picsum.photos/seed/cineflix3/300/450', 'https://picsum.photos/seed/cineflix3b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 12.90, 3, TRUE),
+ (4, 'Risadas na Cozinha', 'Um chef desastrado tenta salvar o restaurante da familia com receitas malucas.', 'Comedia', 2020, 98, 'L', 'https://picsum.photos/seed/cineflix4/300/450', 'https://picsum.photos/seed/cineflix4b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4', 6.90, 2, FALSE),
+ (5, 'Sombras da Noite', 'Um detetive investiga uma serie de crimes ligados a um culto secreto.', 'Suspense', 2023, 121, '16', 'https://picsum.photos/seed/cineflix5/300/450', 'https://picsum.photos/seed/cineflix5b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4', 10.90, 2, FALSE),
+ (6, 'O Reino Encantado', 'Uma jovem descobre um mundo magico escondido atras da velha biblioteca da cidade.', 'Fantasia', 2018, 106, 'L', 'https://picsum.photos/seed/cineflix6/300/450', 'https://picsum.photos/seed/cineflix6b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4', 5.90, 2, FALSE),
+ (7, 'Codigo Vermelho', 'Uma hacker precisa impedir um ataque cibernetico global em menos de 24 horas.', 'Acao', 2023, 133, '14', 'https://picsum.photos/seed/cineflix7/300/450', 'https://picsum.photos/seed/cineflix7b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4', 11.90, 2, TRUE),
+ (8, 'Memorias do Mar', 'A historia emocionante de um velho pescador e sua ligacao com o oceano.', 'Drama', 2017, 112, '10', 'https://picsum.photos/seed/cineflix8/300/450', 'https://picsum.photos/seed/cineflix8b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4', 7.90, 2, FALSE),
+ (9, 'A Casa do Terror', 'Amigos passam a noite em uma mansao assombrada e descobrem que nao estao sozinhos.', 'Terror', 2022, 95, '18', 'https://picsum.photos/seed/cineflix9/300/450', 'https://picsum.photos/seed/cineflix9b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4', 8.90, 2, FALSE),
+ (10, 'Corrida Sem Limites', 'Um piloto novato desafia campeoes mundiais em uma disputa de tirar o folego.', 'Acao', 2021, 118, '12', 'https://picsum.photos/seed/cineflix10/300/450', 'https://picsum.photos/seed/cineflix10b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4', 9.90, 2, FALSE),
+ (11, 'Amor em Paris', 'Dois estranhos se encontram em Paris e vivem um romance inesquecivel em uma noite.', 'Romance', 2020, 101, '12', 'https://picsum.photos/seed/cineflix11/300/450', 'https://picsum.photos/seed/cineflix11b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4', 6.90, 2, FALSE),
+ (12, 'Galaxia Perdida', 'Uma tripulacao espacial enfrenta o desconhecido apos atravessar um buraco de minhoca.', 'Ficcao Cientifica', 2019, 137, '14', 'https://picsum.photos/seed/cineflix12/300/450', 'https://picsum.photos/seed/cineflix12b/1280/720', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4', 10.90, 3, FALSE);

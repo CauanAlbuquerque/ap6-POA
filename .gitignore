@@ -1,0 +1,30 @@
+# ===== Build Maven =====
+target/
+*.jar
+*.war
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===== Banco de dados H2 (dados locais) =====
+data/
+*.db
+*.mv.db
+*.trace.db
+
+# ===== Logs e arquivos temporarios da execucao =====
+*.log
+app.log
+app.err
+app.pid
+
+# ===== IDEs =====
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# ===== Sistema operacional =====
+Thumbs.db
+.DS_Store
