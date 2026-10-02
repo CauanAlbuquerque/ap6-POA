@@ -1,0 +1,10 @@
+target/
+data/
+*.log
+*.err
+*.pid
+.git/
+.idea/
+.vscode/
+*.db
+*.mv.db
